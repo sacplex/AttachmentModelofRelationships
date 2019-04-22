@@ -8,11 +8,43 @@
 extern "C" {
 #endif
 	/*
-	 * Class:     App
+	 * Class:     portal_NPCNativePortal
 	 * Method:    print
 	 * Signature: ()V
 	 */
-	JNIEXPORT void JNICALL Java_com_amr_cp_App_print
+	JNIEXPORT void JNICALL Java_portal_NPCNativePortal_print
+	(JNIEnv *, jobject);
+
+	/*
+	 * Class:     portal_NPCNativePortal
+	 * Method:    start
+	 * Signature: ()V
+	 */
+	JNIEXPORT void JNICALL Java_portal_NPCNativePortal_start
+	(JNIEnv *, jobject);
+
+	/*
+	 * Class:     portal_NPCNativePortal
+	 * Method:    addPlayer
+	 * Signature: (jstring)V
+	 */
+	JNIEXPORT void JNICALL Java_portal_NPCNativePortal_addPlayer
+	(JNIEnv *, jobject, jstring);
+
+	/*
+	 * Class:     portal_NPCNativePortal
+	 * Method:    findPlayer
+	 * Signature: (jstring)V
+	 */
+	JNIEXPORT void JNICALL Java_portal_NPCNativePortal_findPlayer
+	(JNIEnv *, jobject, jstring);
+
+	/*
+	 * Class:     portal_NPCNativePortal
+	 * Method:    finish
+	 * Signature: ()V
+	 */
+	JNIEXPORT void JNICALL Java_portal_NPCNativePortal_finish
 	(JNIEnv *, jobject);
 
 #ifdef __cplusplus

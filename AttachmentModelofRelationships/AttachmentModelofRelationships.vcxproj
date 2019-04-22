@@ -85,6 +85,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <CompileAsWinRT>false</CompileAsWinRT>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -93,6 +94,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
+      <CompileAsWinRT>false</CompileAsWinRT>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -124,12 +126,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Player.h" />
+    <ClInclude Include="src\NPC.h" />
     <ClInclude Include="src\Fact.h" />
     <ClInclude Include="src\com_amr_cp_App.h" />
     <ClInclude Include="src\AMR_Java_Interface.h" />
     <ClInclude Include="src\Knowledge.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Player.cpp" />
+    <ClCompile Include="src\NPC.cpp" />
     <ClCompile Include="src\Fact.cpp" />
     <ClCompile Include="src\AMR_Java_Interface.cpp" />
     <ClCompile Include="src\Knowledge.cpp" />

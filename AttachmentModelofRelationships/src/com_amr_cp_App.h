@@ -15,6 +15,14 @@ extern "C" {
 JNIEXPORT void JNICALL Java_com_amr_cp_App_print
   (JNIEnv *, jobject);
 
+/*
+ * Class:     com_amr_cp_App
+ * Method:    start
+ * Signature: ()V
+ */
+JNIEXPORT void JNICALL Java_com_amr_cp_App_start
+(JNIEnv *, jobject);
+
 #ifdef __cplusplus
 }
 #endif
