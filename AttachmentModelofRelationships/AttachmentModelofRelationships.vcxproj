@@ -126,14 +126,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\CommitmentState.h" />
+    <ClInclude Include="src\HasKnowledgeState.h" />
+    <ClInclude Include="src\NoKnowledgeState.h" />
+    <ClInclude Include="src\NPCPlayerRelationShip.h" />
+    <ClInclude Include="src\NPCState.h" />
     <ClInclude Include="src\Player.h" />
     <ClInclude Include="src\NPC.h" />
     <ClInclude Include="src\Fact.h" />
     <ClInclude Include="src\com_amr_cp_App.h" />
     <ClInclude Include="src\AMR_Java_Interface.h" />
     <ClInclude Include="src\Knowledge.h" />
+    <ClInclude Include="src\ReliableState.h" />
+    <ClInclude Include="src\TrustedState.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\NPCPlayerRelationShip.cpp" />
     <ClCompile Include="src\Player.cpp" />
     <ClCompile Include="src\NPC.cpp" />
     <ClCompile Include="src\Fact.cpp" />
