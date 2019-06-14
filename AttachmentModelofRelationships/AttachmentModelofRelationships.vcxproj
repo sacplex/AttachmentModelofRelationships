@@ -126,6 +126,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\FileIO.h" />
+    <ClInclude Include="src\Greeting.h" />
     <ClInclude Include="src\CommitmentState.h" />
     <ClInclude Include="src\HasKnowledgeState.h" />
     <ClInclude Include="src\NoKnowledgeState.h" />
@@ -141,6 +143,8 @@
     <ClInclude Include="src\TrustedState.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\FileIO.cpp" />
+    <ClCompile Include="src\Greeting.cpp" />
     <ClCompile Include="src\NPCPlayerRelationShip.cpp" />
     <ClCompile Include="src\Player.cpp" />
     <ClCompile Include="src\NPC.cpp" />

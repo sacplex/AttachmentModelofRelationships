@@ -10,6 +10,8 @@ public:
 	void PrintName();
 	void InsertPlayer(std::string);
 	void FindPlayer(std::string);
+	void CreateOrLoadGameFile(std::string, std::string);
+	const char* GetGreeting(std::string);
 	void ClearPlayers();
 private:
 	const char* name;

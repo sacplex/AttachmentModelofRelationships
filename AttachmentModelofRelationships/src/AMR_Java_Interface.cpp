@@ -55,6 +55,36 @@ JNIEXPORT void JNICALL Java_portal_NPCNativePortal_findPlayer
 	env->ReleaseStringUTFChars(playerName, name);
 }
 
+JNIEXPORT void JNICALL Java_portal_NPCNativePortal_initPlayer
+(JNIEnv * env, jobject, jstring _gameName, jstring _playerName)
+{
+	const char* gameName = env->GetStringUTFChars(_gameName, NULL);
+	const char* playerName = env->GetStringUTFChars(_playerName, NULL);
+
+	npc->FindPlayer(playerName);
+	npc->CreateOrLoadGameFile(gameName, playerName);
+
+	env->ReleaseStringUTFChars(_playerName, playerName);
+	env->ReleaseStringUTFChars(_gameName, gameName);
+}
+
+JNIEXPORT jstring JNICALL Java_portal_NPCNativePortal_returnGreeting
+(JNIEnv * env, jobject, jstring playerName)
+{
+	const char* name = env->GetStringUTFChars(playerName, NULL);
+
+	const char* greeting = npc->GetGreeting(name);
+
+	printf("%s", "Greeting: ");
+	printf("%s\n", greeting);
+
+	fflush(stdout);
+
+	env->ReleaseStringUTFChars(playerName, name);
+
+	return (*env).NewStringUTF(greeting);
+}
+
 JNIEXPORT void JNICALL Java_portal_NPCNativePortal_finish
 (JNIEnv *, jobject)
 {

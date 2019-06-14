@@ -23,9 +23,13 @@ void NPC::InsertPlayer(std::string playerName)
 	players.insert(std::make_pair(playerName, player));
 }
 
+void NPC::CreateOrLoadGameFile(std::string gameName, std::string playerName)
+{
+	players[playerName]->Init(gameName);
+}
+
 void NPC::FindPlayer(std::string playerName)
 {
-
 	if (players.find(playerName) == players.end())
 		printf("%s%s", playerName.c_str(), " not found\n\n");
 
@@ -34,6 +38,13 @@ void NPC::FindPlayer(std::string playerName)
 		printf("%s%s", playerName.c_str(), " found\n\n");
 
 	fflush(stdout);
+}
+
+const char* NPC::GetGreeting(std::string playerName)
+{
+	const char* greeting = players[playerName]->GetGreeting()->GetGreetingPhase();
+
+	return greeting;
 }
 
 void NPC::ClearPlayers()
