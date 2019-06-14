@@ -7,9 +7,20 @@
 class Player
 {
 private:
+	const char* PLAYER_HEADER = "# PLAYER NAME";
+
+	const char* PLAYER_KNOWLEDGE_HEADER = "# KNOWLEDGE";
+	const char* PLAYER_TRUST_HEADER = "# TRUST";
+	const char* PLAYER_RELIABLE_HEADER = "# RELIABLE";
+	const char* PLAYER_COMMITMENT_HEADER = "# COMMITMENT";
+
+	std::string PLAYER_KNOWLEDGE_NAME = "NAME:";
+	std::string PLAYER_KNOWLEDGE_AGE = "AGE:";
+	std::string PLAYER_KNOWLEDGE_GENDER = "GENDER:";
+	std::string PLAYER_KNOWLEDGE_RACE = "RACE:";
+
 	std::string name;
 	std::string gameName;
-	const char* PLAYER_HEADER = "# PLAYER NAME";
 	Greeting *greeting;
 	FileIO *fileIO;
 public:

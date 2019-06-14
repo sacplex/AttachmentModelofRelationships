@@ -16,9 +16,12 @@ void FileIO::WriteANewPlayerFile(const char* fileName)
 	writeToFile.open(fileName);
 }
 
-void FileIO::WriteHeaderDataToPlayerFile(const char* headerData)
+void FileIO::WriteHeaderDataToPlayerFile(const char* headerData, bool firstHeader)
 {
-	writeToFile << "\n" << headerData << "\n\n";
+	if(firstHeader)
+		writeToFile << headerData << "\n\n";
+	else
+		writeToFile << "\n" << headerData << "\n\n";
 }
 
 void FileIO::WriteDataToPlayerFile(const char* data)

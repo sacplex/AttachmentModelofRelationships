@@ -21,12 +21,22 @@ void Player::Init(std::string gameName)
 	}
 	else
 	{
-		printf("%s%s", gameName.c_str(), " file not found\n\n");
+		printf("%s%s", (gameName.append(".txt")).c_str(), " file not found\n\n");
 		printf("%s", "Creating game file.\n\n");
 
 		fileIO->WriteANewPlayerFile(gameName.c_str());
-		fileIO->WriteHeaderDataToPlayerFile(Player::PLAYER_HEADER);
+		fileIO->WriteHeaderDataToPlayerFile(Player::PLAYER_HEADER, true);
 		fileIO->WriteDataToPlayerFile(gameName.c_str());
+		fileIO->WriteHeaderDataToPlayerFile(Player::PLAYER_KNOWLEDGE_HEADER);
+
+		fileIO->WriteDataToPlayerFile(Player::PLAYER_KNOWLEDGE_NAME.append(gameName.append("\n")).c_str());
+		fileIO->WriteDataToPlayerFile(Player::PLAYER_KNOWLEDGE_AGE.append("unknown\n").c_str());
+		fileIO->WriteDataToPlayerFile(Player::PLAYER_KNOWLEDGE_GENDER.append("unknown\n").c_str());
+		fileIO->WriteDataToPlayerFile(Player::PLAYER_KNOWLEDGE_RACE.append("unknown\n").c_str());
+
+		fileIO->WriteHeaderDataToPlayerFile(Player::PLAYER_TRUST_HEADER);
+		fileIO->WriteHeaderDataToPlayerFile(Player::PLAYER_RELIABLE_HEADER);
+		fileIO->WriteHeaderDataToPlayerFile(Player::PLAYER_COMMITMENT_HEADER);
 	}
 
 	fflush(stdout);

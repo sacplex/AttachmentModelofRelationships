@@ -11,7 +11,7 @@ public:
 	FileIO();
 	~FileIO();
 	void WriteANewPlayerFile(const char*);
-	void WriteHeaderDataToPlayerFile(const char*);
+	void WriteHeaderDataToPlayerFile(const char*, bool = false);
 	void WriteDataToPlayerFile(const char*);
 	bool CheckForExistingPlayerFile(const char*);
 };
