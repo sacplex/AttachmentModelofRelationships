@@ -126,31 +126,40 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\FileIO.h" />
-    <ClInclude Include="src\Greeting.h" />
-    <ClInclude Include="src\CommitmentState.h" />
-    <ClInclude Include="src\HasKnowledgeState.h" />
-    <ClInclude Include="src\NoKnowledgeState.h" />
-    <ClInclude Include="src\NPCPlayerRelationShip.h" />
-    <ClInclude Include="src\NPCState.h" />
-    <ClInclude Include="src\Player.h" />
-    <ClInclude Include="src\NPC.h" />
-    <ClInclude Include="src\Fact.h" />
-    <ClInclude Include="src\com_amr_cp_App.h" />
+    <ClInclude Include="src\AMR\Analyser.h" />
+    <ClInclude Include="src\AMR\Core\Core.h" />
+    <ClInclude Include="src\AMR\Script.h" />
+    <ClInclude Include="src\AMR\CommitmentState.h" />
+    <ClInclude Include="src\AMR\Fact.h" />
+    <ClInclude Include="src\AMR\FileIO.h" />
+    <ClInclude Include="src\AMR\Greeting.h" />
+    <ClInclude Include="src\AMR\HasKnowledgeState.h" />
+    <ClInclude Include="src\AMR\Knowledge.h" />
+    <ClInclude Include="src\AMR\NoKnowledgeState.h" />
+    <ClInclude Include="src\AMR\NPC.h" />
+    <ClInclude Include="src\AMR\NPCPlayerRelationShip.h" />
+    <ClInclude Include="src\AMR\NPCState.h" />
+    <ClInclude Include="src\AMR\Player.h" />
+    <ClInclude Include="src\AMR\ReliableState.h" />
+    <ClInclude Include="src\AMR\TrustedState.h" />
+    <ClInclude Include="src\AMR\Util\StringUtil.h" />
+    <ClInclude Include="src\AMR_CS_Interface.h" />
     <ClInclude Include="src\AMR_Java_Interface.h" />
-    <ClInclude Include="src\Knowledge.h" />
-    <ClInclude Include="src\ReliableState.h" />
-    <ClInclude Include="src\TrustedState.h" />
+    <ClInclude Include="src\com_amr_cp_App.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\FileIO.cpp" />
-    <ClCompile Include="src\Greeting.cpp" />
-    <ClCompile Include="src\NPCPlayerRelationShip.cpp" />
-    <ClCompile Include="src\Player.cpp" />
-    <ClCompile Include="src\NPC.cpp" />
-    <ClCompile Include="src\Fact.cpp" />
+    <ClCompile Include="src\AMR\Analyser.cpp" />
+    <ClCompile Include="src\AMR\Script.cpp" />
+    <ClCompile Include="src\AMR\Fact.cpp" />
+    <ClCompile Include="src\AMR\FileIO.cpp" />
+    <ClCompile Include="src\AMR\Greeting.cpp" />
+    <ClCompile Include="src\AMR\Knowledge.cpp" />
+    <ClCompile Include="src\AMR\NPC.cpp" />
+    <ClCompile Include="src\AMR\NPCPlayerRelationShip.cpp" />
+    <ClCompile Include="src\AMR\Player.cpp" />
+    <ClCompile Include="src\AMR\Util\StringUtil.cpp" />
+    <ClCompile Include="src\AMR_CS_Interface.cpp" />
     <ClCompile Include="src\AMR_Java_Interface.cpp" />
-    <ClCompile Include="src\Knowledge.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

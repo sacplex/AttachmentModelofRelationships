@@ -9,6 +9,13 @@ extern "C" {
 #endif
 	/*
 	 * Class:     portal_NPCNativePortal
+	 * Method:    test
+	 * Signature: ()V
+	 */
+	JNIEXPORT void JNICALL Java_portal_NPCNativePortal_test
+	(JNIEnv *, jobject);
+	/*
+	 * Class:     portal_NPCNativePortal
 	 * Method:    print
 	 * Signature: ()V
 	 */
@@ -46,6 +53,38 @@ extern "C" {
 	 */
 	JNIEXPORT void JNICALL Java_portal_NPCNativePortal_initPlayer
 	(JNIEnv *, jobject, jstring, jstring);
+
+	/*
+	 * Class:     portal_NPCNativePortal
+	 * Method:    jstring
+	 * Signature: ()jstring
+	 */
+	JNIEXPORT jstring JNICALL Java_portal_NPCNativePortal_returnName
+	(JNIEnv *, jobject);
+
+	/*
+	 * Class:     portal_NPCNativePortal
+	 * Method:    jstring
+	 * Signature: ()jstring
+	 */
+	JNIEXPORT jstring JNICALL Java_portal_NPCNativePortal_returnAge
+	(JNIEnv *, jobject);
+
+	/*
+	 * Class:     portal_NPCNativePortal
+	 * Method:    jstring
+	 * Signature: ()jstring
+	 */
+	JNIEXPORT jstring JNICALL Java_portal_NPCNativePortal_returnStudy
+	(JNIEnv *, jobject);
+
+	/*
+	 * Class:     portal_NPCNativePortal
+	 * Method:    jstring
+	 * Signature: ()jstring
+	 */
+	JNIEXPORT jstring JNICALL Java_portal_NPCNativePortal_returnVersion
+	(JNIEnv *, jobject);
 
 	/*
 	 * Class:     portal_NPCNativePortal

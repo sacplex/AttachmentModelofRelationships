@@ -1,25 +1,32 @@
-#include "AMR_Java_Interface.h"
-#include "Knowledge.h"
-#include "NPC.h"
 #include <iostream> 
 #include <stdio.h>
 #include <unordered_map>
 #include <Windows.h>
 
-using namespace std;
+#include "AMR_Java_Interface.h"
+#include "AMR/Knowledge.h"
+#include "AMR/NPC.h"
 
-NPC *npc;
+AMR::NPC *npc;
+
+JNIEXPORT void JNICALL Java_portal_NPCNativePortal_test
+(JNIEnv *, jobject)
+{
+	printf("NPC DLL TEST PRINT\n");
+
+	fflush(stdout);
+}
 
 JNIEXPORT void JNICALL Java_portal_NPCNativePortal_print
 (JNIEnv *, jobject)
 {
 	printf("Welcome to the Attachment Model of Relationships\n");
-	cout << "Welcome to the Attachment Model of Relationships\n" << endl;
+	std::cout << "Welcome to the Attachment Model of Relationships\n" << std::endl;
 
-	Knowledge *knowledge = new Knowledge();
-	knowledge->SetFact((char*)"teacher");
+	AMR::Knowledge *knowledge = new AMR::Knowledge();
+	knowledge->SetFact("role", "teacher");
 
-	printf(knowledge->GetFact()->GetFactData());
+	printf(knowledge->GetFact("role")->GetFactData().c_str());
 	printf("\n");
 	fflush(stdout);
 
@@ -29,7 +36,7 @@ JNIEXPORT void JNICALL Java_portal_NPCNativePortal_print
 JNIEXPORT void JNICALL Java_portal_NPCNativePortal_start
 (JNIEnv *, jobject)
 {
-	npc = new NPC();
+	npc = new AMR::NPC();
 	npc->PrintName();
 
 	fflush(stdout);
@@ -83,6 +90,38 @@ JNIEXPORT jstring JNICALL Java_portal_NPCNativePortal_returnGreeting
 	env->ReleaseStringUTFChars(playerName, name);
 
 	return (*env).NewStringUTF(greeting);
+}
+
+JNIEXPORT jstring JNICALL Java_portal_NPCNativePortal_returnName
+(JNIEnv * env, jobject)
+{
+	const char* name = npc->GetName();
+	
+	return (*env).NewStringUTF(name);
+}
+
+JNIEXPORT jstring JNICALL Java_portal_NPCNativePortal_returnAge
+(JNIEnv * env, jobject)
+{
+	const char* age = npc->GetAge();
+
+	return (*env).NewStringUTF(age);
+}
+
+JNIEXPORT jstring JNICALL Java_portal_NPCNativePortal_returnStudy
+(JNIEnv * env, jobject)
+{
+	const char* study = npc->GetStudy();
+
+	return (*env).NewStringUTF(study);
+}
+
+JNIEXPORT jstring JNICALL Java_portal_NPCNativePortal_returnVersion
+(JNIEnv * env, jobject)
+{
+	const char* version = npc->GetVersion();
+
+	return (*env).NewStringUTF(version);
 }
 
 JNIEXPORT void JNICALL Java_portal_NPCNativePortal_finish

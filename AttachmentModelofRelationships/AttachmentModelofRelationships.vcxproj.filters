@@ -15,49 +15,64 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\com_amr_cp_App.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\AMR_Java_Interface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Fact.h">
+    <ClInclude Include="src\AMR_CS_Interface.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Knowledge.h">
+    <ClInclude Include="src\com_amr_cp_App.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\NPC.h">
+    <ClInclude Include="src\AMR\TrustedState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Player.h">
+    <ClInclude Include="src\AMR\CommitmentState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\NPCState.h">
+    <ClInclude Include="src\AMR\Fact.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\NPCPlayerRelationShip.h">
+    <ClInclude Include="src\AMR\FileIO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\NoKnowledgeState.h">
+    <ClInclude Include="src\AMR\Greeting.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\HasKnowledgeState.h">
+    <ClInclude Include="src\AMR\HasKnowledgeState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\TrustedState.h">
+    <ClInclude Include="src\AMR\Knowledge.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\ReliableState.h">
+    <ClInclude Include="src\AMR\NoKnowledgeState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\CommitmentState.h">
+    <ClInclude Include="src\AMR\NPC.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Greeting.h">
+    <ClInclude Include="src\AMR\NPCPlayerRelationShip.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\FileIO.h">
+    <ClInclude Include="src\AMR\NPCState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AMR\Player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AMR\ReliableState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AMR\Util\StringUtil.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AMR\Script.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AMR\Analyser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AMR\Core\Core.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -65,25 +80,37 @@
     <ClCompile Include="src\AMR_Java_Interface.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Knowledge.cpp">
+    <ClCompile Include="src\AMR_CS_Interface.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Fact.cpp">
+    <ClCompile Include="src\AMR\Fact.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\NPC.cpp">
+    <ClCompile Include="src\AMR\FileIO.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Player.cpp">
+    <ClCompile Include="src\AMR\Greeting.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\NPCPlayerRelationShip.cpp">
+    <ClCompile Include="src\AMR\Knowledge.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Greeting.cpp">
+    <ClCompile Include="src\AMR\NPC.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\FileIO.cpp">
+    <ClCompile Include="src\AMR\NPCPlayerRelationShip.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AMR\Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AMR\Util\StringUtil.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AMR\Script.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AMR\Analyser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
