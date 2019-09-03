@@ -18,9 +18,9 @@ namespace AMR {
 
 		fileIO.ReadFile("NPC_Profile.txt");
 
-		std::vector<std::string> lines = fileIO.GetLines();
+		std::vector<String> lines = fileIO.GetLines();
 
-		std::string delimiter = ":";
+		String delimiter = ":";
 		name = lines[0];
 		age = lines[1];
 		study = lines[2];
@@ -29,35 +29,38 @@ namespace AMR {
 
 	void NPC::PrintName()
 	{
-		printf("%s%s%s", "NPC name: ", name, "\n\n");
+		std::cout << "NPC name: " << name << std::endl;
 	}
 
-	void NPC::InsertPlayer(std::string playerName)
+	void NPC::InsertPlayer(String playerName)
 	{
-		Player *player = new Player();
+		Ref<Player> player = std::make_shared<Player>();
 		player->SetName(playerName);
-
 		players.insert(std::make_pair(playerName, player));
 	}
 
-	void NPC::CreateOrLoadGameFile(std::string gameName, std::string playerName)
+	void NPC::CreateOrLoadGameFile(String gameName, String playerName)
 	{
 		players[playerName]->Init(gameName);
 	}
 
-	void NPC::FindPlayer(std::string playerName)
+	void NPC::FindPlayer(String playerName)
 	{
 		if (players.find(playerName) == players.end())
+		{
 			printf("%s%s", playerName.c_str(), " not found\n\n");
-
+		}			
 		// If key found then iterator to that key is returned 
 		else
+		{
+			currentPlayer = players[playerName];
 			printf("%s%s", playerName.c_str(), " found\n\n");
+		}
 
 		fflush(stdout);
 	}
 
-	const char* NPC::GetGreeting(std::string playerName)
+	const char* NPC::GetGreeting(String playerName)
 	{
 		const char* greeting = players[playerName]->GetGreeting()->GetGreetingPhase();
 
@@ -67,6 +70,11 @@ namespace AMR {
 	const char* NPC::GetName()
 	{
 		return name.c_str();
+	}
+
+	const char* NPC::GetNameQuestion()
+	{
+		return currentPlayer->GetName()->GetFactQuestion().c_str();
 	}
 
 	const char* NPC::GetAge()

@@ -142,6 +142,8 @@
     <ClInclude Include="src\AMR\Player.h" />
     <ClInclude Include="src\AMR\ReliableState.h" />
     <ClInclude Include="src\AMR\TrustedState.h" />
+    <ClInclude Include="src\AMR\Trust\Disclosure.h" />
+    <ClInclude Include="src\AMR\Trust\Stereotype.h" />
     <ClInclude Include="src\AMR\Util\StringUtil.h" />
     <ClInclude Include="src\AMR_CS_Interface.h" />
     <ClInclude Include="src\AMR_Java_Interface.h" />
@@ -157,6 +159,8 @@
     <ClCompile Include="src\AMR\NPC.cpp" />
     <ClCompile Include="src\AMR\NPCPlayerRelationShip.cpp" />
     <ClCompile Include="src\AMR\Player.cpp" />
+    <ClCompile Include="src\AMR\Trust\Disclosure.cpp" />
+    <ClCompile Include="src\AMR\Trust\Stereotype.cpp" />
     <ClCompile Include="src\AMR\Util\StringUtil.cpp" />
     <ClCompile Include="src\AMR_CS_Interface.cpp" />
     <ClCompile Include="src\AMR_Java_Interface.cpp" />

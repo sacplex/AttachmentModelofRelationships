@@ -5,6 +5,8 @@ namespace AMR {
 	Player::Player()
 	{
 		greeting = new Greeting();
+
+		knowledge = std::make_shared<Knowledge>();
 	}
 
 	Player::~Player()
@@ -79,7 +81,10 @@ namespace AMR {
 
 	void Player::SetName(String playerName)
 	{
+		if (knowledge == nullptr)
+			std::cout << "Knowledge is null" << std::endl;
 		knowledge->SetFact("name", playerName);
+		knowledge->GetFact("name")->setFactQuestion("What is your name?");
 	}
 
 	void Player::SetName(Ref<Fact> playerName)

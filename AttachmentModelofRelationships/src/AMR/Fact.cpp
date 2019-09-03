@@ -30,6 +30,14 @@ namespace AMR {
 		Fact::data = data;
 	}
 
+	void Fact::setFactQuestion(String question)
+	{
+		if (!known)
+			Fact::question = question;
+		else
+			Fact::question = "No question is necessary";
+	}
+
 	String Fact::GetFactName()
 	{
 		return name;
@@ -38,5 +46,10 @@ namespace AMR {
 	String Fact::GetFactData()
 	{
 		return data;
+	}
+
+	String Fact::GetFactQuestion()
+	{
+		return question;
 	}
 }

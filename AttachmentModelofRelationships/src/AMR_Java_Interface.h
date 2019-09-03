@@ -67,6 +67,14 @@ extern "C" {
 	 * Method:    jstring
 	 * Signature: ()jstring
 	 */
+	JNIEXPORT jstring JNICALL Java_portal_NPCNativePortal_returnNameQuestion
+	(JNIEnv *, jobject);
+
+	/*
+	 * Class:     portal_NPCNativePortal
+	 * Method:    jstring
+	 * Signature: ()jstring
+	 */
 	JNIEXPORT jstring JNICALL Java_portal_NPCNativePortal_returnAge
 	(JNIEnv *, jobject);
 

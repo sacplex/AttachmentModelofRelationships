@@ -7,6 +7,8 @@
 #include "AMR/Knowledge.h"
 #include "AMR/NPC.h"
 
+#include "AMR/Core/Core.h"
+
 AMR::NPC *npc;
 
 JNIEXPORT void JNICALL Java_portal_NPCNativePortal_test
@@ -98,6 +100,14 @@ JNIEXPORT jstring JNICALL Java_portal_NPCNativePortal_returnName
 	const char* name = npc->GetName();
 	
 	return (*env).NewStringUTF(name);
+}
+
+JNIEXPORT jstring JNICALL Java_portal_NPCNativePortal_returnNameQuestion
+(JNIEnv * env, jobject)
+{
+	const char* nameQuestion = npc->GetNameQuestion();
+
+	return (*env).NewStringUTF(nameQuestion);
 }
 
 JNIEXPORT jstring JNICALL Java_portal_NPCNativePortal_returnAge
