@@ -6,78 +6,77 @@
 #include "ReliableState.h"
 #include "CommitmentState.h"
 
+#include "NPC.h"
+
 namespace AMR {
 
 	NPCPlayerRelationShip::NPCPlayerRelationShip()
 	{
-		m_NoKnowledgeState = new NoKnowledgeState();
-		m_HasKnowledgeState = new HasKnowledgeState();
-		m_TrustedState = new TrustedState();
-		m_ReliableState = new ReliableState();
-		m_CommitmentState = new CommitmentState();
+		m_GreetState = std::make_shared<NPCState>();
+		m_HasKnowledgeState = std::make_shared<NPCState>();
+		m_TrustedState = std::make_shared<NPCState>();
+		m_ReliableState = std::make_shared<NPCState>();
+		m_CommitmentState = std::make_shared<NPCState>();
 
-		m_StateOfNPC = m_NoKnowledgeState;
+		m_StateOfNPC = m_GreetState;
 	}
 
 	NPCPlayerRelationShip::~NPCPlayerRelationShip()
 	{
-		delete m_NoKnowledgeState;
-		delete m_HasKnowledgeState;
-		delete m_TrustedState;
-		delete m_ReliableState;
-		delete m_CommitmentState;
-
-		delete m_StateOfNPC;
 	}
 
 	void NPCPlayerRelationShip::KnowledgeExist()
 	{
-		m_StateOfNPC->KnowPlayer();
+		m_StateOfNPC = m_HasKnowledgeState;
 	}
 
 	void NPCPlayerRelationShip::AccurateMentalRepresentation()
 	{
-		m_StateOfNPC->TrustPlayer();
+		m_StateOfNPC = m_TrustedState;
 	}
 
 	void NPCPlayerRelationShip::PerformsTask()
 	{
-		m_StateOfNPC->RelyPlayer();
+		m_StateOfNPC = m_ReliableState;
 	}
 
 	void NPCPlayerRelationShip::PerformsSelflessTask()
 	{
-		m_StateOfNPC->CommitPlayer();
+		m_StateOfNPC = m_CommitmentState;
 	}
 
-	NPCState * NPCPlayerRelationShip::GetNoKnowledgeState()
+	Ref<NPCState> NPCPlayerRelationShip::GetGreetState()
 	{
-		return m_NoKnowledgeState;
+		return m_GreetState;
 	}
 
-	NPCState * NPCPlayerRelationShip::GetHasKnowledgeState()
+	Ref<NPCState> NPCPlayerRelationShip::GetHasKnowledgeState()
 	{
 		return m_HasKnowledgeState;
 	}
 
-	NPCState * NPCPlayerRelationShip::GetTrustedState()
+	Ref<NPCState> NPCPlayerRelationShip::GetTrustedState()
 	{
 		return m_TrustedState;
 	}
 
-	NPCState * NPCPlayerRelationShip::GetReiableState()
+	Ref<NPCState> NPCPlayerRelationShip::GetReiableState()
 	{
 		return m_ReliableState;
 	}
 
-	NPCState * NPCPlayerRelationShip::GetCommitmentState()
+	Ref<NPCState> NPCPlayerRelationShip::GetCommitmentState()
 	{
 		return m_CommitmentState;
 	}
 
-	void NPCPlayerRelationShip::SetStateOfNPC(NPCState * npcState)
+	void NPCPlayerRelationShip::SetStateOfNPC(Ref<NPCState> npcState)
 	{
 		m_StateOfNPC = npcState;
 	}
 
+	Ref<NPCState> NPCPlayerRelationShip::GetStateOfNPC()
+	{
+		return m_StateOfNPC;
+	}
 }

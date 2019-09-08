@@ -4,6 +4,9 @@ namespace AMR {
 
 	NPC::NPC()
 	{
+		type = "";
+		data = "";
+
 		LoadProfile();
 	}
 
@@ -30,7 +33,7 @@ namespace AMR {
 	void NPC::PrintName()
 	{
 		std::cout << "NPC name: " << name << std::endl;
-	}
+	} 
 
 	void NPC::InsertPlayer(String playerName)
 	{
@@ -67,6 +70,13 @@ namespace AMR {
 		return greeting;
 	}
 
+	const char* NPC::GetGreetQuestion(String playerName)
+	{
+		const char* greetingQuestion = players[playerName]->GetGreeting()->GetGreetingQuestion();
+
+		return greetingQuestion;
+	}
+
 	const char* NPC::GetName()
 	{
 		return name.c_str();
@@ -87,9 +97,67 @@ namespace AMR {
 		return study.c_str();
 	}
 
+	void NPC::SetNPCResponseType(String _type)
+	{
+		type = _type;
+	}
+
+	void NPC::SetNPCResponseData(String _data)
+	{
+		data = _data;
+	}
+
+	bool NPC::CheckForNPCResponse()
+	{
+		if (type != "" && data != "")
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+
+	const char* NPC::GetNPCResponseType()
+	{
+		return type.c_str();
+	}
+
+	const char* NPC::GetNPCResponseData()
+	{
+		return data.c_str();
+	}
+
+	void NPC::ClearNPCResponse()
+	{
+		type = "";
+		data = "";
+	}
+
 	const char* NPC::GetVersion()
 	{
 		return version.c_str();
+	}
+
+	bool NPC::Check()
+	{
+		return currentPlayer->Check();
+	}
+
+	String NPC::GetType()
+	{
+		return currentPlayer->GetType();
+	}
+
+	String NPC::GetData()
+	{
+		return currentPlayer->GetData();
+	}
+	
+	void NPC::Clear()
+	{
+		currentPlayer->Clear();
 	}
 
 	void NPC::ClearPlayers()

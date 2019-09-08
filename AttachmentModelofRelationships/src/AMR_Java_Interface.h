@@ -104,11 +104,53 @@ extern "C" {
 
 	/*
 	 * Class:     portal_NPCNativePortal
+	 * Method:    jstring
+	 * Signature: ()jstring
+	 */
+	JNIEXPORT jstring JNICALL Java_portal_NPCNativePortal_returnGreetingQuestion
+	(JNIEnv *, jobject, jstring);
+
+	/*
+	 * Class:     portal_NPCNativePortal
+	 * Method:    finish
+	 * Signature: ()V
+	 */
+	JNIEXPORT jboolean JNICALL Java_portal_NPCNativePortal_returnCheckForNPCResponse
+	(JNIEnv *, jobject);
+
+	/*
+	 * Class:     portal_NPCNativePortal
+	 * Method:    finish
+	 * Signature: ()V
+	 */
+	JNIEXPORT jstring JNICALL Java_portal_NPCNativePortal_returnNPCResponseType
+	(JNIEnv *, jobject);
+
+	/*
+	 * Class:     portal_NPCNativePortal
+	 * Method:    finish
+	 * Signature: ()V
+	 */
+	JNIEXPORT jstring JNICALL Java_portal_NPCNativePortal_returnNPCResponseData
+	(JNIEnv *, jobject);
+
+	/*
+	 * Class:     portal_NPCNativePortal
+	 * Method:    finish
+	 * Signature: ()V
+	 */
+	JNIEXPORT void JNICALL Java_portal_NPCNativePortal_clearNPCResponse
+	(JNIEnv *, jobject);
+
+	/*
+	 * Class:     portal_NPCNativePortal
 	 * Method:    finish
 	 * Signature: ()V
 	 */
 	JNIEXPORT void JNICALL Java_portal_NPCNativePortal_finish
 	(JNIEnv *, jobject);
+
+	
 
 #ifdef __cplusplus
 }

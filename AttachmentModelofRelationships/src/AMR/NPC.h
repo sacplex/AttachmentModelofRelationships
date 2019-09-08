@@ -19,6 +19,9 @@ namespace AMR {
 		String age;
 		String study;
 		String version;
+
+		String type;
+		String data;
 	public:
 		NPC();
 		~NPC();
@@ -33,8 +36,18 @@ namespace AMR {
 		const char* GetStudy();
 		const char* GetVersion();
 		const char* GetGreeting(String);
-		void ClearPlayers();
-	
+		const char* GetGreetQuestion(String);
+		bool CheckForNPCResponse();
+		void SetNPCResponseType(String);
+		void SetNPCResponseData(String);
+		const char* GetNPCResponseType();
+		const char* GetNPCResponseData();
+		bool Check();
+		String GetType();
+		String GetData();
+		void Clear();
+		void ClearNPCResponse();
+		void ClearPlayers();		
 	};
 
 }

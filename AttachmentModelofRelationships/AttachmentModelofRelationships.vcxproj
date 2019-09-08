@@ -126,6 +126,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\AMR\NPCResponse.h" />
     <ClInclude Include="src\AMR\Analyser.h" />
     <ClInclude Include="src\AMR\Core\Core.h" />
     <ClInclude Include="src\AMR\Script.h" />
@@ -150,6 +151,7 @@
     <ClInclude Include="src\com_amr_cp_App.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\AMR\NPCResponse.cpp" />
     <ClCompile Include="src\AMR\Analyser.cpp" />
     <ClCompile Include="src\AMR\Script.cpp" />
     <ClCompile Include="src\AMR\Fact.cpp" />

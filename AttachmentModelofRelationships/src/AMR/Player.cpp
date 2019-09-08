@@ -4,17 +4,20 @@ namespace AMR {
 
 	Player::Player()
 	{
-		greeting = new Greeting();
+		greeting = std::make_shared<Greeting>();
 
 		knowledge = std::make_shared<Knowledge>();
+
+		type = "";
+		data = "";
 	}
 
 	Player::~Player()
 	{
-		delete greeting;
+		
 	}
 
-	void Player::Init(std::string gameName)
+	void Player::Init(String gameName)
 	{
 		FileIO fileIO;
 
@@ -79,17 +82,36 @@ namespace AMR {
 		fflush(stdout);
 	}
 
+	void Player::SetEnquiry(String enquiry)
+	{
+		if (greeting == nullptr)
+		{
+			std::cout << "Greeting is null" << std::endl;
+		}
+		else
+		{
+			type = "Question";
+			data = greeting->GetGreetingQuestion();
+		}
+	}
+
 	void Player::SetName(String playerName)
 	{
 		if (knowledge == nullptr)
 			std::cout << "Knowledge is null" << std::endl;
 		knowledge->SetFact("name", playerName);
 		knowledge->GetFact("name")->setFactQuestion("What is your name?");
+
+		if(knowledge->GetNumberOfFacts() > knowledge->GetFactsThreshold())
+			npcPlayerRelationship->KnowledgeExist();
 	}
 
 	void Player::SetName(Ref<Fact> playerName)
 	{
 		knowledge->SetFact(playerName);
+
+		if (knowledge->GetNumberOfFacts() > knowledge->GetFactsThreshold())
+			npcPlayerRelationship->KnowledgeExist();
 	}
 
 	Ref<Fact> Player::GetName()
@@ -100,11 +122,17 @@ namespace AMR {
 	void Player::SetAge(String playerAge)
 	{
 		knowledge->SetFact("age", playerAge);
+
+		if (knowledge->GetNumberOfFacts() > knowledge->GetFactsThreshold())
+			npcPlayerRelationship->KnowledgeExist();
 	}
 
 	void Player::SetAge(Ref<Fact> playerAge)
 	{
 		knowledge->SetFact(playerAge);
+
+		if (knowledge->GetNumberOfFacts() > knowledge->GetFactsThreshold())
+			npcPlayerRelationship->KnowledgeExist();
 	}
 
 	Ref<Fact> Player::GetAge()
@@ -115,11 +143,17 @@ namespace AMR {
 	void Player::SetGender(String playerGender)
 	{
 		knowledge->SetFact("gender", playerGender);
+
+		if (knowledge->GetNumberOfFacts() > knowledge->GetFactsThreshold())
+			npcPlayerRelationship->KnowledgeExist();
 	}
 
 	void Player::SetGender(Ref<Fact> playerGender)
 	{
 		knowledge->SetFact(playerGender);
+
+		if (knowledge->GetNumberOfFacts() > knowledge->GetFactsThreshold())
+			npcPlayerRelationship->KnowledgeExist();
 	}
 
 	Ref<Fact> Player::GetGender()
@@ -127,14 +161,20 @@ namespace AMR {
 		return name;
 	}
 
-	void Player::SetRace(std::string playerRace)
+	void Player::SetRace(String playerRace)
 	{
 		knowledge->SetFact("gender", playerRace);
+
+		if (knowledge->GetNumberOfFacts() > knowledge->GetFactsThreshold())
+			npcPlayerRelationship->KnowledgeExist();
 	}
 
 	void Player::SetRace(Ref<Fact> playerRace)
 	{
 		knowledge->SetFact(playerRace);
+
+		if (knowledge->GetNumberOfFacts() > knowledge->GetFactsThreshold())
+			npcPlayerRelationship->KnowledgeExist();
 	}
 
 	Ref<Fact> Player::GetRace()
@@ -147,19 +187,42 @@ namespace AMR {
 		return knowledge;
 	}
 
-	void Player::SetGameName(std::string gameName)
+	void Player::SetGameName(String gameName)
 	{
 		Player::gameName = gameName;
 	}
 
-	std::string Player::GetGameName()
+	String Player::GetGameName()
 	{
 		return Player::gameName;
 	}
 
-	Greeting* Player::GetGreeting()
+	Ref<Greeting> Player::GetGreeting()
 	{
-		return Player::greeting;
+		return greeting;
 	}
 
+	bool Player::Check()
+	{
+		if (type != "" && data != "")
+			return true;
+		else
+			return false;
+	}
+
+	String Player::GetType()
+	{
+		return type;
+	}
+
+	String Player::GetData()
+	{
+		return data;
+	}
+
+	void Player::Clear()
+	{
+		type = "";
+		data = "";
+	}
 }

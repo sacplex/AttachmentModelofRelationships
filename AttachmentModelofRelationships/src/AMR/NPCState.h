@@ -8,6 +8,8 @@ namespace AMR {
 		NPCState() {}
 		virtual ~NPCState() {}
 
+		virtual void GreetPlayer() {}
+
 		virtual void KnowPlayer() {}
 		virtual void TrustPlayer() {}
 		virtual void RelyPlayer() {}

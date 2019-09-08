@@ -13,9 +13,9 @@ namespace AMR {
 
 	void Analyser::Run()
 	{
-		if (player->GetKnowledge()->GetFactsThreshold() == player->GetKnowledge()->GetFactsThreshold())
+		/*if (player->GetKnowledge()->GetFactsThreshold() == player->GetKnowledge()->GetFactsThreshold())
 			std::cout << "NPC has reached knowledge threshold" << std::endl;
 		else
-			std::cout << "NPC has not reached knowledge threshold" << std::endl;
+			std::cout << "NPC has not reached knowledge threshold" << std::endl;*/
 	}
 }

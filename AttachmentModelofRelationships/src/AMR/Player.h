@@ -7,6 +7,7 @@
 #include "FileIO.h"
 #include "Greeting.h"
 #include "Knowledge.h"
+#include "NPCPlayerRelationShip.h"
 #include "Util/StringUtil.h"
 
 namespace AMR {
@@ -28,6 +29,9 @@ namespace AMR {
 		std::string PLAYER_KNOWLEDGE_GENDER = "GENDER:";
 		std::string PLAYER_KNOWLEDGE_RACE = "RACE:";
 
+		Ref<NPCPlayerRelationShip> npcPlayerRelationship;
+
+		Ref<Greeting> greeting;
 		Ref<Knowledge> knowledge;
 
 		Ref<Fact> name;
@@ -35,14 +39,15 @@ namespace AMR {
 		Ref<Fact> gender;
 		Ref<Fact> race;
 
-		std::string gameName;
-		Greeting *greeting;
+		String gameName;
+		String type;
+		String data;
 		
 		FileIO *fileIO;
 	public:
 		Player();
 		~Player();
-		void Init(std::string);
+		void Init(String);
 		void SetName(String);
 		void SetName(Ref<Fact> playerName);
 		void SetAge(String);
@@ -55,11 +60,17 @@ namespace AMR {
 		Ref<Fact> GetAge();
 		Ref<Fact> GetGender();
 		Ref<Fact> GetRace();
+		void SetEnquiry(String enquiry);
 		Ref<Knowledge> GetKnowledge();
-		void SetGameName(std::string);
+		void SetGameName(String);
 
-		std::string GetGameName();
-		Greeting* GetGreeting();
+		String GetGameName();
+		Ref<Greeting> GetGreeting();
+
+		bool Check();
+		String GetType();
+		String GetData();
+		void Clear();
 	};
 
 }

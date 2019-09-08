@@ -94,6 +94,16 @@ JNIEXPORT jstring JNICALL Java_portal_NPCNativePortal_returnGreeting
 	return (*env).NewStringUTF(greeting);
 }
 
+JNIEXPORT jstring JNICALL Java_portal_NPCNativePortal_returnGreetingQuestion
+(JNIEnv *env, jobject, jstring playerName)
+{
+	const char* name = env->GetStringUTFChars(playerName, NULL);
+	
+	const char* greetQuestion = npc->GetGreetQuestion(name);
+
+	return (*env).NewStringUTF(greetQuestion);
+}
+
 JNIEXPORT jstring JNICALL Java_portal_NPCNativePortal_returnName
 (JNIEnv * env, jobject)
 {
@@ -132,6 +142,32 @@ JNIEXPORT jstring JNICALL Java_portal_NPCNativePortal_returnVersion
 	const char* version = npc->GetVersion();
 
 	return (*env).NewStringUTF(version);
+}
+
+JNIEXPORT jboolean JNICALL Java_portal_NPCNativePortal_returnCheckForNPCResponse
+(JNIEnv * env, jobject)
+{
+	jboolean retCheck = npc->Check();
+
+	return retCheck;
+}
+
+JNIEXPORT jstring JNICALL Java_portal_NPCNativePortal_returnNPCResponseType
+(JNIEnv * env, jobject)
+{
+	return (*env).NewStringUTF(npc->GetType().c_str());
+}
+
+JNIEXPORT jstring JNICALL Java_portal_NPCNativePortal_returnNPCResponseData
+(JNIEnv * env, jobject)
+{
+	return (*env).NewStringUTF(npc->GetData().c_str());
+}
+
+JNIEXPORT void JNICALL Java_portal_NPCNativePortal_clearNPCResponse
+(JNIEnv *, jobject)
+{
+	npc->Clear();
 }
 
 JNIEXPORT void JNICALL Java_portal_NPCNativePortal_finish
