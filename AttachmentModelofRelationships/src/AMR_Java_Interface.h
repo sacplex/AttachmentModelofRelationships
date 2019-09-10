@@ -32,6 +32,14 @@ extern "C" {
 
 	/*
 	 * Class:     portal_NPCNativePortal
+	 * Method:    start
+	 * Signature: ()V
+	 */
+	JNIEXPORT void JNICALL Java_portal_NPCNativePortal_act
+	(JNIEnv *, jobject);
+
+	/*
+	 * Class:     portal_NPCNativePortal
 	 * Method:    addPlayer
 	 * Signature: (jstring)V
 	 */

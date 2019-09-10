@@ -6,7 +6,16 @@ namespace AMR {
 
 	class NPCPlayerRelationShip
 	{
-	private:
+	public:
+		const int GREETING = 0;
+		const int KNOWLEDGE = 1;
+		const int TRUST = 2;
+		const int RELIABLE = 3;
+		const int COMMITMENT = 4;
+		enum State { greeting, knowledge, trust, reliable, commitment };
+		int state = GREETING;
+	private:		
+
 		Ref<NPCState> m_StateOfNPC;
 		Ref<NPCState> m_GreetState;
 		Ref<NPCState> m_HasKnowledgeState;
@@ -30,7 +39,6 @@ namespace AMR {
 
 		void SetStateOfNPC(Ref<NPCState> state);
 		Ref<NPCState> GetStateOfNPC();
-
 	};
 
 }

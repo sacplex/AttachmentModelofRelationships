@@ -8,7 +8,9 @@ namespace AMR {
 
 		knowledge = std::make_shared<Knowledge>();
 
-		type = "";
+		npcPlayerRelationship = std::make_shared<NPCPlayerRelationShip>();
+
+		type = "unknown";
 		data = "";
 	}
 
@@ -80,6 +82,22 @@ namespace AMR {
 		}
 
 		fflush(stdout);
+	}
+
+	void Player::Act()
+	{
+		std::cout << "Acting" << std::endl;
+		std::cout << npcPlayerRelationship->state << std::endl;
+		
+
+		if (npcPlayerRelationship->state == npcPlayerRelationship->GREETING)
+		{
+			std::cout << "Setting a greeting" << std::endl;
+			std::cout << "Type: " << type << std::endl;
+			type = "greeting";
+			std::cout << "Type: " << type << std::endl;
+			data = greeting->GetGreetingQuestion();
+		}
 	}
 
 	void Player::SetEnquiry(String enquiry)
@@ -200,6 +218,11 @@ namespace AMR {
 	Ref<Greeting> Player::GetGreeting()
 	{
 		return greeting;
+	}
+
+	Ref<NPCPlayerRelationShip> Player::GetNPCPlayerRelationShip()
+	{
+		return npcPlayerRelationship;
 	}
 
 	bool Player::Check()

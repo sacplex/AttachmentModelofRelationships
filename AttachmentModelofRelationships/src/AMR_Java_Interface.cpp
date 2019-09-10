@@ -44,6 +44,12 @@ JNIEXPORT void JNICALL Java_portal_NPCNativePortal_start
 	fflush(stdout);
 }
 
+JNIEXPORT void JNICALL Java_portal_NPCNativePortal_act
+(JNIEnv *, jobject)
+{
+	npc->Act();
+}
+
 JNIEXPORT void JNICALL Java_portal_NPCNativePortal_addPlayer
 (JNIEnv * env, jobject, jstring playerName)
 {

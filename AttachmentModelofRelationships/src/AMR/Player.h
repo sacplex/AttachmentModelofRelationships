@@ -60,12 +60,17 @@ namespace AMR {
 		Ref<Fact> GetAge();
 		Ref<Fact> GetGender();
 		Ref<Fact> GetRace();
+
+		Ref<NPCPlayerRelationShip> GetNPCPlayerRelationShip();
+
 		void SetEnquiry(String enquiry);
 		Ref<Knowledge> GetKnowledge();
 		void SetGameName(String);
 
 		String GetGameName();
 		Ref<Greeting> GetGreeting();
+
+		void Act();
 
 		bool Check();
 		String GetType();

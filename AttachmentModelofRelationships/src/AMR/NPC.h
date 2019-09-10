@@ -27,6 +27,7 @@ namespace AMR {
 		~NPC();
 		void LoadProfile();
 		void PrintName();
+		void Act();
 		void InsertPlayer(String);
 		void FindPlayer(String);
 		void CreateOrLoadGameFile(String, String);

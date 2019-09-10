@@ -33,7 +33,12 @@ namespace AMR {
 	void NPC::PrintName()
 	{
 		std::cout << "NPC name: " << name << std::endl;
-	} 
+	}
+
+	void NPC::Act()
+	{
+		currentPlayer->Act();
+	}
 
 	void NPC::InsertPlayer(String playerName)
 	{
